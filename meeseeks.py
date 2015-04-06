@@ -10,7 +10,7 @@ EMAIL_FROM = "Mr. Meeseeks <hi@gtalug.org>"
 # EMAIL_TO = "GTALUG Operations <operations@gtalug.org>"
 EMAIL_TO = "me@mylesbraithwaite.com"
 
-DATETIME_FORMAT = "%m %B, %Y"
+DATETIME_FORMAT = "%d %B, %Y"
 
 MEETING_DATE = list(dateutil_rrule.rrule(
     freq=dateutil_rrule.MONTHLY,
