@@ -7,8 +7,7 @@ from email.mime.text import MIMEText
 from dateutil import rrule as dateutil_rrule
 
 EMAIL_FROM = "Mr. Meeseeks <hi@gtalug.org>"
-# EMAIL_TO = "GTALUG Operations <operations@gtalug.org>"
-EMAIL_TO = "me@mylesbraithwaite.com"
+EMAIL_TO = "GTALUG Operations <operations@gtalug.org>"
 
 DATETIME_FORMAT = "%d %B, %Y"
 
