@@ -40,9 +40,9 @@ def send_email(subject, body):
     s.quit()
 
 def main(subject, body):
-    msg_body = Template(body)
+    s = Template(body)
     
-    msg_body.substitue(
+    msg_body = s.substitue(
         meeting_date=MEETING_DATE.strftime(DATETIME_FORMAT),
         ops_meeting_date=OPS_MEETING_DATE.strftime(DATETIME_FORMAT)
     )
