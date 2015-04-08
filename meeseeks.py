@@ -1,6 +1,6 @@
 import smtplib
+import datetime
 from string import Template
-from datetime import datetime
 from optparse import OptionParser
 from email.mime.text import MIMEText
 
@@ -13,7 +13,7 @@ DATETIME_FORMAT = "%d %B, %Y"
 
 MEETING_DATE = list(dateutil_rrule.rrule(
     freq=dateutil_rrule.MONTHLY,
-    dtstart=datetime.now(),
+    dtstart=datetime.datetime.now(),
     count=1,
     byweekday=(dateutil_rrule.TU),
     bysetpos=2
@@ -21,7 +21,7 @@ MEETING_DATE = list(dateutil_rrule.rrule(
 
 OPS_MEETING_DATE = list(dateutil_rrule.rrule(
     freq=dateutil_rrule.MONTHLY,
-    dtstart=datetime.now(),
+    dtstart=datetime.datetime.now(),
     count=1,
     byweekday=(dateutil_rrule.MO),
     bysetpos=4
@@ -38,13 +38,18 @@ def send_email(subject, body):
     s.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
     s.quit()
 
-def main(subject, body):
+def get_body(body):
     s = Template(body)
     
     msg_body = s.substitute(
         meeting=MEETING_DATE.strftime(DATETIME_FORMAT),
         ops=OPS_MEETING_DATE.strftime(DATETIME_FORMAT)
     )
+    
+    return msg_body
+
+def main(subject, body):
+    msg_body = get_body(body)
     
     send_email(subject, msg_body)
 
