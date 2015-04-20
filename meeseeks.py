@@ -1,6 +1,5 @@
 import smtplib
 import datetime
-from string import Template
 from optparse import OptionParser
 from email.mime.text import MIMEText
 
@@ -41,14 +40,12 @@ def send_email(subject, body):
 
 
 def get_body(body):
-    s = Template(body)
 
-    msg_body = s.substitute(
+    body = body.format(
         meeting=MEETING_DATE.strftime(DATETIME_FORMAT),
         ops=OPS_MEETING_DATE.strftime(DATETIME_FORMAT)
     )
-
-    return msg_body
+    return body
 
 
 def main(subject, body):
@@ -72,4 +69,4 @@ if __name__ == "__main__":
     with open(options.filename, 'r') as f:
         body = f.read()
 
-    send_email(subject, body)
+    send_email(subject, get_body(body))
