@@ -71,5 +71,5 @@ if __name__ == "__main__":
 
     with open(options.filename, 'r') as f:
         body = f.read()
-        send_email(subject, get_body(body))
-
+    
+    main(subject, body)
