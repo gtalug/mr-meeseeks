@@ -1,6 +1,6 @@
 I'm Mr. Meeseeks! Look at me!
 
-There is a GTALUG meeting coming up on $meeting, is the GTALUG Board/Executive prepared?
+There is a GTALUG meeting coming up on {meeting}, is the GTALUG Board/Executive prepared?
 
 - [ ] Contact the speaker.
 - [ ] Does the speaker need anything else besides a projector (i.e. graphic dongles).

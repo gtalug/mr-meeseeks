@@ -1,6 +1,5 @@
 import smtplib
 import datetime
-from string import Template
 from optparse import OptionParser
 from email.mime.text import MIMEText
 
@@ -10,6 +9,9 @@ EMAIL_FROM = "Mr. Meeseeks <hi@gtalug.org>"
 EMAIL_TO = "GTALUG Operations <operations@gtalug.org>"
 
 DATETIME_FORMAT = "%d %B, %Y"
+
+MEETING_URL = "http://gtalug.org/meeting/%Y-%m/"
+OPS_MEETING_URL = "http://board.gtalug.org/%Y-%m-%d/agenda.html"
 
 MEETING_DATE = list(dateutil_rrule.rrule(
     freq=dateutil_rrule.MONTHLY,
@@ -41,15 +43,14 @@ def send_email(subject, body):
 
 
 def get_body(body):
-    s = Template(body)
-
-    msg_body = s.substitute(
+    body = body.format(
         meeting=MEETING_DATE.strftime(DATETIME_FORMAT),
-        ops=OPS_MEETING_DATE.strftime(DATETIME_FORMAT)
+        meeting_url=MEETING_DATE.strftime(MEETING_URL),
+        
+        ops=OPS_MEETING_DATE.strftime(DATETIME_FORMAT),
+        ops_url=OPS_MEETING_DATE.strftime(OPS_MEETING_URL)
     )
-
-    return msg_body
-
+    return body
 
 def main(subject, body):
     msg_body = get_body(body)
@@ -58,14 +59,17 @@ def main(subject, body):
 
 if __name__ == "__main__":
     parser = OptionParser()
-    parser.add_option('-f', '--file', dest='filename',
-                      help="Email template you wish to send.", metavar="FILE")
-
+    parser.add_option(
+        '-f', '--file',
+        dest='filename',
+        help="Email template you wish to send.",
+        metavar="FILE"
+    )
     (options, args) = parser.parse_args()
 
     subject = "I'm Mr. Meeseeks! Look at me!"
 
     with open(options.filename, 'r') as f:
         body = f.read()
+        send_email(subject, get_body(body))
 
-    send_email(subject, body)

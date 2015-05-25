@@ -1,7 +1,7 @@
 Look at me! I'm Mr. Meeseeks!
 
-The GTALUG Operations meeting is on $ops
+The GTALUG Operations meeting is on {ops}
 
-There is a regular GTALUG meeting coming up on $meeting; is the GTALUG Board/Executive prepared???
+There is a regular GTALUG meeting coming up on {meeting}; is the GTALUG Board/Executive prepared???
 
 I'm Mr. Meeseeks! Look at me! (poof)
