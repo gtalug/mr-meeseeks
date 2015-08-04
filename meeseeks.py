@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import smtplib
 import datetime
 from optparse import OptionParser
@@ -46,7 +48,7 @@ def get_body(body):
     body = body.format(
         meeting=MEETING_DATE.strftime(DATETIME_FORMAT),
         meeting_url=MEETING_DATE.strftime(MEETING_URL),
-        
+
         ops=OPS_MEETING_DATE.strftime(DATETIME_FORMAT),
         ops_url=OPS_MEETING_DATE.strftime(OPS_MEETING_URL)
     )
@@ -71,5 +73,5 @@ if __name__ == "__main__":
 
     with open(options.filename, 'r') as f:
         body = f.read()
-    
+
     main(subject, body)
