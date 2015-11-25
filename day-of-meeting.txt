@@ -4,4 +4,6 @@ There is a GTALUG meeting tonight at 7:30pm, is the GTALUG Board/Executive prepa
 
 <{meeting_url}>
 
+Check the GitHub for meeting status: <http://git.io/vB40S>
+
 Look at me! I'm Mr. Meeseeks! (poof)
