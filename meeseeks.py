@@ -70,6 +70,12 @@ def main(args):
     date, doc = get_next_ops_meeting(repo)
     doc = frontmatter.loads(b64decode(doc.content).decode('utf-8'))
 
+    # TODO: This is stupid.
+    margin = datetime.timedelta(days=1)
+
+    if not now.date() == (date - margin).date():
+        return True
+
     context = {}
 
     context['meeting_date'] = get_next_meeting()
