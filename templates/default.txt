@@ -1,0 +1,9 @@
+Look at me! I'm Mr. Meeseeks!
+
+Below is the agenda for the next GTALUG Operations meeting. If you would like to add a topic to the agenda, reply to this email.
+
+<https://board.gtalug.org/{{ meeting_date.strftime('%Y-%m-%d') }}/agenda.html>
+
+{{ ops_agenda }}
+
+I'm Mr. Meeseeks! Look at me! (poof)
