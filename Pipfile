@@ -7,7 +7,7 @@ python-dateutil = "*"
 PyGithub = "*"
 python-frontmatter = "*"
 pytz = "*"
-jinja2 = "*"
+Jinja2 = "*"
 
 [dev-packages]
 bpython = "*"
