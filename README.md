@@ -1,3 +1,4 @@
-# Mr. Meeseeks
+# This Repository Has Been Moved to GitLab
 
-[I'm Mr. Meeseeks! Look at me!](https://www.youtube.com/watch?v=qUYvIAP3qQk)
+<https://gitlab.com/gtalug/mr-meeseeks>
+
